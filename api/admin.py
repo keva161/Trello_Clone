@@ -1,7 +1,10 @@
 from django.contrib import admin
 
 # Register your models here.
-from api.models import User, Kanban
+from api.models import User, Board, List, Card
 
-admin.site.register(User)
-admin.site.register(Kanban)
+class apiAdmin(admin.ModelAdmin):
+    class Meta:
+        model = User
+
+admin.site.register([User, Board, List, Card])
